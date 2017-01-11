@@ -17,7 +17,7 @@ class Controller extends \Ip\WidgetController
 
 		if ($page) {
 			$links = array(
-				'Facebook' => 'http://www.facebook.com/sharer.php?href=' .
+				'Facebook' => 'http://www.facebook.com/sharer/sharer.php?u=' .
 					urlencode($page->getLink()),
 				'LinkedIn' => 'http://www.linkedin.com/shareArticle?' .
 					http_build_query(array(
