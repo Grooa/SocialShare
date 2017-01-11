@@ -1,6 +1,4 @@
-<div class="social">
-	Share this article<br>
-
+<p>Share this article</p>
 <?php
 foreach ($links as $name => $link) {
 ?>
