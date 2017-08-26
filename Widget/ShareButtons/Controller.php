@@ -14,19 +14,21 @@ class Controller extends \Ip\WidgetController
 
 		$links = array();
 		$page = ipContent()->getCurrentPage();
+		$pageLink = !empty($page) ? $page->getLink() : '';
 
 		if ($page) {
 			$links = array(
 				'Facebook' => 'http://www.facebook.com/sharer/sharer.php?u=' .
-					urlencode($page->getLink()),
+					urlencode($pageLink),
 				'LinkedIn' => 'http://www.linkedin.com/shareArticle?' .
 					http_build_query(array(
 						'mini' => 'true',
-						'url' => $page->getLink(),
+						'url' => $pageLink,
 						'title' => $page->getMetaTitle(),
 						'summary' => $page->getDescription(),
 						'source' => ipGetOptionLang('Config.websiteTitle')
-					))
+					)),
+                'Twitter' => 'https://twitter.com/intent/tweet'
 			);
 		}
 
